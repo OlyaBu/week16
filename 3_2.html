@@ -6,113 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>бланк регистрации</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: black;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .container {
-
-            padding: 16px;
-            background-color: rgb(159, 232, 205);
-        }
-
-        h1 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 800;
-            font-size: larger;
-        }
-
-        h2 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 500;
-            font-size: large;
-        }
-
-        /* Full-width input fields */
-        input[type=text] {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            display: inline-block;
-            border: none;
-            background: #f1f1f1;
-        }
-
-        input[type=text]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
-
-        .autoage {
-            display: flex;
-            flex-direction: column;
-            align-self: center;
-            background-color: lightpink;
-            border: blue;
-            padding: 2%;
-        }
-
-        .fuel {
-
-            height: 10%;
-            width: 40vw;
-            font-size: larger;
-            background-color: rgb(222, 159, 170);
-            padding: 1%;
-            border: none;
-
-        }
-
-        hr {
-            border: 1px solid #f1f1f1;
-            margin-bottom: 25px;
-        }
-
-        /* Set a style for the submit button */
-        .searchbtn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 16px 20px;
-            font-size: larger;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            opacity: 0.9;
-        }
-
-        .searchbtn:hover {
-            opacity: 1;
-        }
-
-        a {
-            color: dodgerblue;
-        }
-
-        .signin {
-            background-color: #f1f1f1;
-            text-align: center;
-        }
-
-        .buy {
-            display: flex;
-            flex-direction: column;
-            align-self: center;
-            background-color: lightpink;
-            font-size: larger;
-            padding: 1%;
-        }
-
-        #errorMessage {
-            color: rebeccapurple;
-        }
-    </style>
+    <link rel="stylesheet" href="/3_2.css"></link>
 </head>
 
 <body>
@@ -123,17 +17,17 @@
             <hr>
             <h2>Возраст автомобиля</h2>
             <div class="autoage">
-                <label><input type="checkbox" class="age" id="three"> меньше 3х лет</label>
-                <label><input type="checkbox" class="age" id="tofive">от 3х до 5</label>
-                <label><input type="checkbox" class="age" id="toseven">5 - 7 лет </label>
-                <label><input type="checkbox" class="age" id="morethenseven">больше 7 лет</label>
+                <label><input value="1" type="checkbox" class="age" id="three"> меньше 3х лет</label>
+                <label><input value="2" type="checkbox" class="age" id="tofive">от 3х до 5</label>
+                <label><input value="3" type="checkbox" class="age" id="toseven">5 - 7 лет </label>
+                <label><input  value="4" type="checkbox" class="age" id="morethenseven">больше 7 лет</label>
             </div>
             <h2>Тип топлива </h2>
             <p><select size="4" multiple name="fuelall" class="fuelall">
-                    <option selected value="yes" name="fuel" class="fuel" id="oil">Бензин</option>
-                    <option value="no" name="fuel" class="fuel" id="disel">Дизель</option>
-                    <option value="no" name="fuel" class="fuel" id="gas">Газ</option>
-                    <option value="no" name="fuel" class="fuel" id="eco">Электричество</option>
+                    <option selected value="8" name="fuel" class="fuel" id="oil">Бензин</option>
+                    <option value="5" name="fuel" class="fuel" id="disel">Дизель</option>
+                    <option value="6" name="fuel" class="fuel" id="gas">Газ</option>
+                    <option value="7" name="fuel" class="fuel" id="eco">Электричество</option>
                 </select></p>
 
         
@@ -142,27 +36,26 @@
 
             <h2>Как купить</h2>
             <div class="buy">
-                <label><input type="radio" class="buy" name="buy" value="yes" checked>В салоне</label>
-                <label><input type="radio" class="buy" name="buy" value="no">На заводе</label>
-                <label><input type="radio" class="buy" name="buy" value="no"> С доставкой по России </label>
+                <label><input value="9" type="radio" class="buy" name="buy"  checked>В салоне</label>
+                <label><input value="10" type="radio" class="buy" name="buy" >На заводе</label>
+                <label><input  value="11" type="radio" class="buy" name="buy" > С доставкой по России </label>
             </div>
             
             <h2>Откуда везем </h2>
             <div class="origin">
-                <label><input type="checkbox" class="origincountry" name="origincountry" id="jp"> Япония</label>
-                <label><input type="checkbox" class="origincountry" name="origincountry" id="usa"> США</label>
-                <label><input type="checkbox" class="origincountry" name="origincountry" id="eu">Европа</label>
-                <label><input type="checkbox" class="origincountry" name="origincountry" id="rus">Россия и СНГ</label>
+                <label><input  value ="12" type="checkbox" class="origincountry" name="origincountry" id="jp"> Япония</label>
+                <label><input value ="13" type="checkbox" class="origincountry" name="origincountry" id="usa"> США</label>
+                <label><input value ="14" type="checkbox" class="origincountry" name="origincountry" id="eu">Европа</label>
+                <label><input value ="15" type="checkbox" class="origincountry" name="origincountry" id="rus">Россия и СНГ</label>
             </div>
 
             <h2>Получатеть</h2>
-            <label><input type="checkbox" name="owner" class="owner" id="men"> человек </label>
-            <label><input type="checkbox" name="owner" class="owner" id="company"> фирма </label>
-            <button type="button" onclick="check();" class="searchbtn">На поиски!</button>
-            <div class="totalprice">
+            <label><input value ="16" type="checkbox" name="owner" class="owner" id="men"> человек </label>
+            <label><input value ="17" type="checkbox" name="owner" class="owner" id="company"> фирма </label>
 
+            <button type="button" onclick="btn();" class="searchbtn">На поиски!</button>
+            <div class="totalprice">
                 <h2> Итоговая цена </h2>
-                <input type="text" placeholder="price" class="totalprice" name="totalprice" id="total">
             </div>
         </div> 
     </form>
