@@ -1,19 +1,54 @@
-// Радиокнопки 
-const buy = Array.from(document.querySelectorAll(".buy"));
-// Чекбоксы
-const age = Array.from(document.querySelector('.age'));
-const owner = Array.from(document.querySelector('.owner'));
-const origin = Array.from(document.querySelector('.origin'))
 
-// Поля ввода
-const volume = Array.from(document.querySelectorAll(".volume"));
+const buy = document.querySelector('input[name="buy"]:checked');
+const owner = document.querySelector('input[name="owner"]:checked');
+const age = document.querySelector('input[name="age"]:checked');
+const country = document.querySelector('input[name="origincountry"]:checked').value;
+/* const fuel = document.querySelector('fuel');
+const value = fuel.options[fuel.selectedIndex].value; */
+/* 
 
-//Селектор 
-const fuel = Array.from(document.querySelectorAll(".fuel"));
+/* поле ввода  */
+addVolume.addEventListener('input', function () {
+	Volume.value = addVolume.value;
+});
 
 
-/* document.querySelector('.buy').addEventListener('click',() => {
-let radio=document.querySelectorAll('.buy');
+
+/*общая кнопка суммирующая результат  */
+const btn = document.querySelector('#btn'); 
+btn.addEventListener('click', getResult) 
+
+
+function calculate(){
+    let getResult = baseBuy(buy.value) + baseOwner(owner.value) + baseAge(age.value);
+};
+
+/* получение значений я пробовала добваить.value 
+ */
+const btn = document.querySelector('#btn'); 
+btn.addEventListener('click', getResult) => {
+    let getResult;
+    for (const groupBuy of groupBuys) {
+        if (groupBuy.checked) {
+            selectedOption = groupBuy.value;
+            break;
+        }
+    }
+    output.innerText = selectedOption ? `You selected ${selectedOption}` : `You haven't selected any option`;
+});
+/* let getValueAge = null; 
+let age = document.getElementsByClassName('.age');
+for(let i= 0; i < age.length; i++) {
+    if (age[i].checked) {
+          getValueAge = age[i].value;
+    }
+/* /* }; */
+
+
+
+
+/* ocument.querySelector('.buy').addEventListener('click',() => {
+let radio=document.q /uerySelectorAll('.buy');
  for(let i= 0; i < radio.length; i++) {
      if (radio[i].checked) {
          data = radio[i].value;
@@ -21,8 +56,8 @@ let radio=document.querySelectorAll('.buy');
      }
      }
 document.querySelector('.buy').innerHTML = data;
-    }); */
-
+    }); 
+ */
 /* //const PriceInfo = {
     age: {
         three: 3000000,
