@@ -5,12 +5,35 @@ const age = document.querySelector('input[name="age"]:checked');
 const country = document.querySelector('input[name="origincountry"]:checked').value;
 /* const fuel = document.querySelector('fuel');
 const value = fuel.options[fuel.selectedIndex].value; */
-/* 
-
 /* поле ввода  */
 addVolume.addEventListener('input', function () {
 	Volume.value = addVolume.value;
 });
+
+
+let checkboxage = document.querySelectorAll('input[name="age"]:checked');
+            let values = [];
+            checkboxage.forEach((checkbox) => {
+                values.push(checkbox.value);
+            });
+
+let checkboxcountry = document.querySelectorAll('input[name="origincountry"]:checked');
+            let values = [];
+            checkboxcountry.forEach((checkbox) => {
+                values.push(checkbox.value);
+            });
+
+            let checkboxowner = document.querySelectorAll('input[name="owner"]:checked');
+            let values = [];
+            checkboxowner.forEach((checkbox) => {
+                values.push(checkbox.value);
+            }); 
+            let radiobuy = document.querySelectorAll('input[name="buy"]:checked');
+            let values = [];
+            radiobuy.forEach((checkbox) => {
+                values.push(checkbox.value);
+            }); 
+
 
 
 
