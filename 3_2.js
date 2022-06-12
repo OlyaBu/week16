@@ -10,26 +10,27 @@ addVolume.addEventListener('input', function () {
 	Volume.value = addVolume.value;
 });
 
-
+/* получение значений с чекбоксов и радиокнопок
+ */
 let checkboxage = document.querySelectorAll('input[name="age"]:checked');
-            let values = [];
+            let agevalues = [];
             checkboxage.forEach((checkbox) => {
                 values.push(checkbox.value);
             });
 
 let checkboxcountry = document.querySelectorAll('input[name="origincountry"]:checked');
-            let values = [];
+            let countryvalues = [];
             checkboxcountry.forEach((checkbox) => {
                 values.push(checkbox.value);
             });
 
             let checkboxowner = document.querySelectorAll('input[name="owner"]:checked');
-            let values = [];
+            let ownervalues = [];
             checkboxowner.forEach((checkbox) => {
                 values.push(checkbox.value);
             }); 
             let radiobuy = document.querySelectorAll('input[name="buy"]:checked');
-            let values = [];
+            let buyvalues = [];
             radiobuy.forEach((checkbox) => {
                 values.push(checkbox.value);
             }); 
