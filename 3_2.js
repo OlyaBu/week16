@@ -1,117 +1,53 @@
+const button = document.getElementById("btn");
+const resultElement = document.getElementById("result");
+const fuelElement = document.getElementById("fuel");
+const option = [
+    document.getElementsByTagName("origincountry"),
+    document.getElementsByName("owner"),
+    document.getElementsByName("age")
+]
+const buy = [...document.querySelectorAll("[name=buy]")];
 
-const buy = document.querySelector('input[name="buy"]:checked');
-const owner = document.querySelector('input[name="owner"]:checked');
-const age = document.querySelector('input[name="age"]:checked');
-const country = document.querySelector('input[name="origincountry"]:checked').value;
-/* const fuel = document.querySelector('fuel');
-const value = fuel.options[fuel.selectedIndex].value; */
-/* поле ввода  */
-addVolume.addEventListener('input', function () {
-	Volume.value = addVolume.value;
-});
+function calc() {
+    const values = []
+    const fuelPrice = getFuelValue();
+    const selectedOptionPrice = calcSelected(option);
+    const selectedBuy = calcSelected(buy);
+    values.push(selectedOptionPrice);
+    values.push(selectedBuy);
 
-/* получение значений с чекбоксов и радиокнопок
- */
-let checkboxage = document.querySelectorAll('input[name="age"]:checked');
-            let agevalues = [];
-            checkboxage.forEach((checkbox) => {
-                values.push(checkbox.value);
-            });
-
-let checkboxcountry = document.querySelectorAll('input[name="origincountry"]:checked');
-            let countryvalues = [];
-            checkboxcountry.forEach((checkbox) => {
-                values.push(checkbox.value);
-            });
-
-            let checkboxowner = document.querySelectorAll('input[name="owner"]:checked');
-            let ownervalues = [];
-            checkboxowner.forEach((checkbox) => {
-                values.push(checkbox.value);
-            }); 
-            let radiobuy = document.querySelectorAll('input[name="buy"]:checked');
-            let buyvalues = [];
-            radiobuy.forEach((checkbox) => {
-                values.push(checkbox.value);
-            }); 
-
-
-
-
-/*общая кнопка суммирующая результат  */
-const btn = document.querySelector('#btn'); 
-btn.addEventListener('click', getResult) 
-
-
-function calculate(){
-    let getResult = baseBuy(buy.value) + baseOwner(owner.value) + baseAge(age.value);
-};
-
-/* получение значений я пробовала добваить.value 
- */
-const btn = document.querySelector('#btn'); 
-btn.addEventListener('click', getResult) => {
-    let getResult;
-    for (const groupBuy of groupBuys) {
-        if (groupBuy.checked) {
-            selectedOption = groupBuy.value;
-            break;
+    document.querySelectorAll("input").forEach((checkbox) => {
+        if (checkbox.checked) {
+            values.push(checkbox.value);
         }
-    }
-    output.innerText = selectedOption ? `You selected ${selectedOption}` : `You haven't selected any option`;
-});
-/* let getValueAge = null; 
-let age = document.getElementsByClassName('.age');
-for(let i= 0; i < age.length; i++) {
-    if (age[i].checked) {
-          getValueAge = age[i].value;
-    }
-/* /* }; */
+    });
+    console.log("values", values);
+    const result = values.reduce((sum, item) => sum +=  +item, 0);
+    console.log("sum", result)
+    return result;
+}
 
-
-
-
-/* ocument.querySelector('.buy').addEventListener('click',() => {
-let radio=document.q /uerySelectorAll('.buy');
- for(let i= 0; i < radio.length; i++) {
-     if (radio[i].checked) {
-         data = radio[i].value;
-         break;
-     }
-     }
-document.querySelector('.buy').innerHTML = data;
-    }); 
- */
-/* //const PriceInfo = {
-    age: {
-        three: 3000000,
-        tofive: 2500000,
-        toseven: 2000000,
-        morethenseven: 1000000,
-    },
-    fuel: {
-        oil: 500000,
-        disel: 100000,
-        eco: 1000000,
-        gas: 50000,
-    },
-   */
-
-/* 
-let currentSet = {
-    age: [] ,
-    fuel: [],
-    volume: [],
-    owner: [],
-    origincountry: [],
-    buy: [],
-    getFinalPrice() {
-        return PriceInfo.age[!this.age];
-    },
-    getOptionPrice() {
-        let optionPrice = 0;
-        if (this.option.length == 0) {
-            Array.forEach(element => )
+function calcSelected(fields) {
+    return fields.reduce((sum, item) => {
+        if (item.checked) {
+            sum += item.value
         }
-    }
- */
+        return sum;
+    }, 0);
+}
+
+function getFuelValue() {
+    return fuelElement.value
+}
+
+function setResult(result) {
+    console.log("result", result);
+    resultElement.innerHTML = result;
+}
+
+function onButtonClick() {
+    const result = calc();
+    setResult(result);
+}
+
+button.addEventListener("click", onButtonClick)
